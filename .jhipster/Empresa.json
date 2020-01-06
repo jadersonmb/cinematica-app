@@ -1,0 +1,60 @@
+{
+    "name": "Empresa",
+    "fields": [
+        {
+            "fieldName": "nomeFantasia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "razaoSocial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnpj",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inscricaoEstadual",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inscricaoMunicipal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataContratacao",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "empresa",
+            "relationshipName": "endereco",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200106110003",
+    "entityTableName": "empresa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

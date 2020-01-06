@@ -44,6 +44,20 @@ public class CacheConfiguration {
             createCache(cm, com.cinematica.domain.User.class.getName() + ".authorities");
             createCache(cm, com.cinematica.domain.PersistentToken.class.getName());
             createCache(cm, com.cinematica.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, com.cinematica.domain.Endereco.class.getName());
+            createCache(cm, com.cinematica.domain.Empresa.class.getName());
+            createCache(cm, com.cinematica.domain.Profissao.class.getName());
+            createCache(cm, com.cinematica.domain.FormaPagamento.class.getName());
+            createCache(cm, com.cinematica.domain.Especialidade.class.getName());
+            createCache(cm, com.cinematica.domain.Medico.class.getName());
+            createCache(cm, com.cinematica.domain.Paciente.class.getName());
+            createCache(cm, com.cinematica.domain.FluxoCaixa.class.getName());
+            createCache(cm, com.cinematica.domain.Horario.class.getName());
+            createCache(cm, com.cinematica.domain.HorarioDisponivel.class.getName());
+            createCache(cm, com.cinematica.domain.DataFalta.class.getName());
+            createCache(cm, com.cinematica.domain.DataFalta.class.getName() + ".horarioDisponivels");
+            createCache(cm, com.cinematica.domain.ConfiguracaoAgenda.class.getName());
+            createCache(cm, com.cinematica.domain.Agenda.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

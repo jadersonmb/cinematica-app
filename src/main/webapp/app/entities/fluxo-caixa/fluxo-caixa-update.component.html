@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fluxo-caixa-heading" jhiTranslate="cinematicaApp.fluxoCaixa.home.createOrEditLabel">Create or edit a Fluxo Caixa</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.dataLancamento" for="field_dataLancamento">Data Lancamento</label>
+                    <div class="d-flex">
+                        <input id="field_dataLancamento" type="datetime-local" class="form-control" name="dataLancamento" formControlName="dataLancamento" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                           formControlName="descricao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.valor" for="field_valor">Valor</label>
+                    <input type="number" class="form-control" name="valor" id="field_valor"
+                           formControlName="valor"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.tipoLancamento" for="field_tipoLancamento">Tipo Lancamento</label>
+                    <select class="form-control" name="tipoLancamento" formControlName="tipoLancamento" id="field_tipoLancamento">
+                        <option value="Receita">{{'cinematicaApp.TipoLancamento.Receita' | translate}}</option>
+                        <option value="Despesa">{{'cinematicaApp.TipoLancamento.Despesa' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.numeroRecibo" for="field_numeroRecibo">Numero Recibo</label>
+                    <input type="text" class="form-control" name="numeroRecibo" id="field_numeroRecibo"
+                           formControlName="numeroRecibo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.quantidadeParcela" for="field_quantidadeParcela">Quantidade Parcela</label>
+                    <input type="number" class="form-control" name="quantidadeParcela" id="field_quantidadeParcela"
+                           formControlName="quantidadeParcela"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.especialidade" for="field_especialidade">Especialidade</label>
+                    <select class="form-control" id="field_especialidade" name="especialidade" formControlName="especialidade">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="especialidadeOption.id === editForm.get('especialidade')!.value?.id ? editForm.get('especialidade')!.value : especialidadeOption" *ngFor="let especialidadeOption of especialidades; trackBy: trackById">{{especialidadeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" formControlName="empresa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{empresaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.paciente" for="field_paciente">Paciente</label>
+                    <select class="form-control" id="field_paciente" name="paciente" formControlName="paciente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pacienteOption.id === editForm.get('paciente')!.value?.id ? editForm.get('paciente')!.value : pacienteOption" *ngFor="let pacienteOption of pacientes; trackBy: trackById">{{pacienteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.fluxoCaixa.formaPagamento" for="field_formaPagamento">Forma Pagamento</label>
+                    <select class="form-control" id="field_formaPagamento" name="formaPagamento" formControlName="formaPagamento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="formaPagamentoOption.id === editForm.get('formaPagamento')!.value?.id ? editForm.get('formaPagamento')!.value : formaPagamentoOption" *ngFor="let formaPagamentoOption of formapagamentos; trackBy: trackById">{{formaPagamentoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

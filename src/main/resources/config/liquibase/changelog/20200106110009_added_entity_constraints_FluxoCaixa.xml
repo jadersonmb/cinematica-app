@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity FluxoCaixa.
+    -->
+    <changeSet id="20200106110009-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="especialidade_id"
+                                 baseTableName="fluxo_caixa"
+                                 constraintName="fk_fluxo_caixa_especialidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="especialidade"/>
+
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="fluxo_caixa"
+                                 constraintName="fk_fluxo_caixa_empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="paciente_id"
+                                 baseTableName="fluxo_caixa"
+                                 constraintName="fk_fluxo_caixa_paciente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paciente"/>
+
+        <addForeignKeyConstraint baseColumnNames="forma_pagamento_id"
+                                 baseTableName="fluxo_caixa"
+                                 constraintName="fk_fluxo_caixa_forma_pagamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="forma_pagamento"/>
+
+    </changeSet>
+</databaseChangeLog>

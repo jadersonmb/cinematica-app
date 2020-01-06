@@ -1,0 +1,32 @@
+{
+  "cinematicaApp": {
+    "fluxoCaixa": {
+      "home": {
+        "title": "Fluxo Caixas",
+        "createLabel": "Create a new Fluxo Caixa",
+        "createOrEditLabel": "Create or edit a Fluxo Caixa",
+        "search": "Search for Fluxo Caixa",
+        "notFound": "No Fluxo Caixas found"
+      },
+      "created": "A new Fluxo Caixa is created with identifier {{ param }}",
+      "updated": "A Fluxo Caixa is updated with identifier {{ param }}",
+      "deleted": "A Fluxo Caixa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fluxo Caixa {{ id }}?"
+      },
+      "detail": {
+        "title": "Fluxo Caixa"
+      },
+      "dataLancamento": "Data Lancamento",
+      "descricao": "Descricao",
+      "valor": "Valor",
+      "tipoLancamento": "Tipo Lancamento",
+      "numeroRecibo": "Numero Recibo",
+      "quantidadeParcela": "Quantidade Parcela",
+      "especialidade": "Especialidade",
+      "empresa": "Empresa",
+      "paciente": "Paciente",
+      "formaPagamento": "Forma Pagamento"
+    }
+  }
+}

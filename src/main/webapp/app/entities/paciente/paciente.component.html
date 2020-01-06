@@ -1,0 +1,126 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cinematicaApp.paciente.home.title">Pacientes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-paciente" [routerLink]="['/paciente/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="cinematicaApp.paciente.home.createLabel">
+            Create a new Paciente
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'cinematicaApp.paciente.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="pacientes?.length === 0">
+        <span jhiTranslate="cinematicaApp.paciente.home.notFound">No pacientes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="pacientes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.nomeCompleto">Nome Completo</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.criadoEm">Criado Em</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.atualizadoEm">Atualizado Em</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.cpf">Cpf</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.rg">Rg</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.email">Email</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.telefoneCelular">Telefone Celular</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.fotoUrl">Foto Url</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.funcionario">Funcionario</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.dataNascimento">Data Nascimento</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.crefito">Crefito</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.telefone">Telefone</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.fotoUrlEndereco">Foto Url Endereco</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.indicacao">Indicacao</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.ativo">Ativo</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.sexo">Sexo</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.empresa">Empresa</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.endereco">Endereco</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.medico">Medico</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.paciente.profissao">Profissao</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let paciente of pacientes ;trackBy: trackId">
+                <td><a [routerLink]="['/paciente', paciente.id, 'view' ]">{{paciente.id}}</a></td>
+                <td>{{paciente.nome}}</td>
+                <td>{{paciente.nomeCompleto}}</td>
+                <td>{{paciente.criadoEm | date:'medium'}}</td>
+                <td>{{paciente.atualizadoEm | date:'medium'}}</td>
+                <td>{{paciente.cpf}}</td>
+                <td>{{paciente.rg}}</td>
+                <td>{{paciente.email}}</td>
+                <td>{{paciente.telefoneCelular}}</td>
+                <td>{{paciente.fotoUrl}}</td>
+                <td>{{paciente.funcionario}}</td>
+                <td>{{paciente.dataNascimento | date:'medium'}}</td>
+                <td>{{paciente.crefito}}</td>
+                <td>{{paciente.telefone}}</td>
+                <td>{{paciente.fotoUrlEndereco}}</td>
+                <td>{{paciente.indicacao}}</td>
+                <td>{{paciente.ativo}}</td>
+                <td jhiTranslate="{{'cinematicaApp.Sexo.' + paciente.sexo}}">{{paciente.sexo}}</td>
+                <td>
+                    <div *ngIf="paciente.empresa">
+                        <a [routerLink]="['/empresa', paciente.empresa?.id, 'view' ]" >{{paciente.empresa?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="paciente.endereco">
+                        <a [routerLink]="['/endereco', paciente.endereco?.id, 'view' ]" >{{paciente.endereco?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="paciente.medico">
+                        <a [routerLink]="['/medico', paciente.medico?.id, 'view' ]" >{{paciente.medico?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="paciente.profissao">
+                        <a [routerLink]="['/profissao', paciente.profissao?.id, 'view' ]" >{{paciente.profissao?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/paciente', paciente.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/paciente', paciente.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(paciente)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

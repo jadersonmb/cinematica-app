@@ -1,0 +1,11 @@
+id;segunda;terca;quarta;quinta;sexta;sabado;domingo
+1;false;false;true;false;true;false;true
+2;false;false;true;true;true;false;true
+3;false;false;true;false;true;true;false
+4;true;false;false;true;false;true;false
+5;false;true;true;true;false;false;true
+6;true;true;true;false;true;false;true
+7;false;false;false;false;true;false;false
+8;true;true;false;true;true;false;false
+9;true;false;true;false;false;true;true
+10;true;true;true;true;false;false;false

@@ -1,0 +1,23 @@
+{
+  "cinematicaApp": {
+    "profissao": {
+      "home": {
+        "title": "Profissaos",
+        "createLabel": "Create a new Profissao",
+        "createOrEditLabel": "Create or edit a Profissao",
+        "search": "Search for Profissao",
+        "notFound": "No Profissaos found"
+      },
+      "created": "A new Profissao is created with identifier {{ param }}",
+      "updated": "A Profissao is updated with identifier {{ param }}",
+      "deleted": "A Profissao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Profissao {{ id }}?"
+      },
+      "detail": {
+        "title": "Profissao"
+      },
+      "descricao": "Descricao"
+    }
+  }
+}

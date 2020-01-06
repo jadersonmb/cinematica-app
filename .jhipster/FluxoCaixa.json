@@ -1,0 +1,70 @@
+{
+    "name": "FluxoCaixa",
+    "fields": [
+        {
+            "fieldName": "dataLancamento",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tipoLancamento",
+            "fieldType": "TipoLancamento",
+            "fieldValues": "Receita,Despesa"
+        },
+        {
+            "fieldName": "numeroRecibo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantidadeParcela",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "especialidade",
+            "otherEntityRelationshipName": "fluxoCaixa",
+            "relationshipName": "especialidade",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "fluxoCaixa",
+            "relationshipName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "fluxoCaixa",
+            "relationshipName": "paciente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "formaPagamento",
+            "otherEntityRelationshipName": "fluxoCaixa",
+            "relationshipName": "formaPagamento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200106110009",
+    "entityTableName": "fluxo_caixa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

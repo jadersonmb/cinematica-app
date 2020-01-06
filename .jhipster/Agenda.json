@@ -1,0 +1,72 @@
+{
+    "name": "Agenda",
+    "fields": [
+        {
+            "fieldName": "dataInicio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dataFim",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "diaTodo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "falta",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "cancelou",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "horario",
+            "otherEntityRelationshipName": "agenda",
+            "relationshipName": "horario",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "agenda",
+            "relationshipName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "agenda",
+            "relationshipName": "paciente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "agenda",
+            "relationshipName": "funcionario",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "especialidade",
+            "otherEntityRelationshipName": "agenda",
+            "relationshipName": "especialidade",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200106110014",
+    "entityTableName": "agenda",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

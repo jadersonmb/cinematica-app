@@ -1,0 +1,26 @@
+{
+  "cinematicaApp": {
+    "dataFalta": {
+      "home": {
+        "title": "Data Faltas",
+        "createLabel": "Criar novo Data Falta",
+        "createOrEditLabel": "Criar ou editar Data Falta",
+        "search": "Pesquisar por Data Falta",
+        "notFound": "Nenhum Data Falta encontrado"
+      },
+      "created": "Um novo Data Falta foi criado com o identificador {{ param }}",
+      "updated": "Um Data Falta foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Data Falta foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Data Falta {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Falta"
+      },
+      "dataFalta": "Data Falta",
+      "horarioDisponivel": "Horario Disponivel",
+      "empresa": "Empresa",
+      "configuracaoAgenda": "Configuracao Agenda"
+    }
+  }
+}

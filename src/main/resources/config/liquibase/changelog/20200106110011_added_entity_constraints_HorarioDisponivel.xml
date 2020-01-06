@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity HorarioDisponivel.
+    -->
+    <changeSet id="20200106110011-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="horario_id"
+                                 baseTableName="horario_disponivel"
+                                 constraintName="fk_horario_disponivel_horario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="horario"/>
+
+        <addForeignKeyConstraint baseColumnNames="data_falta_id"
+                                 baseTableName="horario_disponivel"
+                                 constraintName="fk_horario_disponivel_data_falta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="data_falta"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,108 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="cinematicaApp.agenda.home.title">Agenda</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-agenda" [routerLink]="['/agenda/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="cinematicaApp.agenda.home.createLabel">
+            Create a new Agenda
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'cinematicaApp.agenda.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="agenda?.length === 0">
+        <span jhiTranslate="cinematicaApp.agenda.home.notFound">No agenda found</span>
+    </div>
+    <div class="table-responsive" *ngIf="agenda?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.dataInicio">Data Inicio</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.dataFim">Data Fim</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.diaTodo">Dia Todo</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.falta">Falta</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.cancelou">Cancelou</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.horario">Horario</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.empresa">Empresa</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.paciente">Paciente</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.funcionario">Funcionario</span></th>
+            <th scope="col" ><span jhiTranslate="cinematicaApp.agenda.especialidade">Especialidade</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let agenda of agenda ;trackBy: trackId">
+                <td><a [routerLink]="['/agenda', agenda.id, 'view' ]">{{agenda.id}}</a></td>
+                <td>{{agenda.dataInicio | date:'medium'}}</td>
+                <td>{{agenda.dataFim | date:'medium'}}</td>
+                <td>{{agenda.diaTodo}}</td>
+                <td>{{agenda.falta}}</td>
+                <td>{{agenda.cancelou}}</td>
+                <td>
+                    <div *ngIf="agenda.horario">
+                        <a [routerLink]="['/horario', agenda.horario?.id, 'view' ]" >{{agenda.horario?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agenda.empresa">
+                        <a [routerLink]="['/empresa', agenda.empresa?.id, 'view' ]" >{{agenda.empresa?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agenda.paciente">
+                        <a [routerLink]="['/paciente', agenda.paciente?.id, 'view' ]" >{{agenda.paciente?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agenda.funcionario">
+                        <a [routerLink]="['/paciente', agenda.funcionario?.id, 'view' ]" >{{agenda.funcionario?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agenda.especialidade">
+                        <a [routerLink]="['/especialidade', agenda.especialidade?.id, 'view' ]" >{{agenda.especialidade?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/agenda', agenda.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/agenda', agenda.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(agenda)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

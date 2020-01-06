@@ -1,0 +1,20 @@
+{
+    "name": "Especialidade",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200106110006",
+    "entityTableName": "especialidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

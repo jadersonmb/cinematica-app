@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-medico-heading" jhiTranslate="cinematicaApp.medico.home.createOrEditLabel">Create or edit a Medico</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.medico.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.medico.telefone" for="field_telefone">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" id="field_telefone"
+                           formControlName="telefone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.medico.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.medico.especialidade" for="field_especialidade">Especialidade</label>
+                    <select class="form-control" id="field_especialidade" name="especialidade" formControlName="especialidade">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="especialidadeOption.id === editForm.get('especialidade')!.value?.id ? editForm.get('especialidade')!.value : especialidadeOption" *ngFor="let especialidadeOption of especialidades; trackBy: trackById">{{especialidadeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

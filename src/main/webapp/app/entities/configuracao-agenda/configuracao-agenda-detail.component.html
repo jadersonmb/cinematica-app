@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="configuracaoAgenda">
+            <h2><span jhiTranslate="cinematicaApp.configuracaoAgenda.detail.title">Configuracao Agenda</span> {{configuracaoAgenda.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.segunda">Segunda</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.segunda}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.terca">Terca</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.terca}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.quarta">Quarta</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.quarta}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.quinta">Quinta</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.quinta}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.sexta">Sexta</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.sexta}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.sabado">Sabado</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.sabado}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.configuracaoAgenda.domingo">Domingo</span></dt>
+                <dd>
+                    <span>{{configuracaoAgenda.domingo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/configuracao-agenda', configuracaoAgenda.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

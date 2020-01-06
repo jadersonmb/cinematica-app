@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DataFalta.
+    -->
+    <changeSet id="20200106110012-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="data_falta"
+                                 constraintName="fk_data_falta_empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="configuracao_agenda_id"
+                                 baseTableName="data_falta"
+                                 constraintName="fk_data_falta_configuracao_agenda_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="configuracao_agenda"/>
+
+    </changeSet>
+</databaseChangeLog>

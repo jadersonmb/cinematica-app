@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fluxoCaixa">
+            <h2><span jhiTranslate="cinematicaApp.fluxoCaixa.detail.title">Fluxo Caixa</span> {{fluxoCaixa.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.dataLancamento">Data Lancamento</span></dt>
+                <dd>
+                    <span>{{fluxoCaixa.dataLancamento}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{fluxoCaixa.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.valor">Valor</span></dt>
+                <dd>
+                    <span>{{fluxoCaixa.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.tipoLancamento">Tipo Lancamento</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cinematicaApp.TipoLancamento.' + fluxoCaixa.tipoLancamento}}">{{fluxoCaixa.tipoLancamento}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.numeroRecibo">Numero Recibo</span></dt>
+                <dd>
+                    <span>{{fluxoCaixa.numeroRecibo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.quantidadeParcela">Quantidade Parcela</span></dt>
+                <dd>
+                    <span>{{fluxoCaixa.quantidadeParcela}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.especialidade">Especialidade</span></dt>
+                <dd>
+                    <div *ngIf="fluxoCaixa.especialidade">
+                        <a [routerLink]="['/especialidade', fluxoCaixa.especialidade?.id, 'view']">{{fluxoCaixa.especialidade?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.empresa">Empresa</span></dt>
+                <dd>
+                    <div *ngIf="fluxoCaixa.empresa">
+                        <a [routerLink]="['/empresa', fluxoCaixa.empresa?.id, 'view']">{{fluxoCaixa.empresa?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.paciente">Paciente</span></dt>
+                <dd>
+                    <div *ngIf="fluxoCaixa.paciente">
+                        <a [routerLink]="['/paciente', fluxoCaixa.paciente?.id, 'view']">{{fluxoCaixa.paciente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.fluxoCaixa.formaPagamento">Forma Pagamento</span></dt>
+                <dd>
+                    <div *ngIf="fluxoCaixa.formaPagamento">
+                        <a [routerLink]="['/forma-pagamento', fluxoCaixa.formaPagamento?.id, 'view']">{{fluxoCaixa.formaPagamento?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fluxo-caixa', fluxoCaixa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
