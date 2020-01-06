@@ -1,0 +1,41 @@
+{
+    "name": "DataFalta",
+    "fields": [
+        {
+            "fieldName": "dataFalta",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "horarioDisponivel",
+            "otherEntityRelationshipName": "dataFalta",
+            "relationshipName": "horarioDisponivel"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "dataFalta",
+            "relationshipName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "configuracaoAgenda",
+            "otherEntityRelationshipName": "dataFalta",
+            "relationshipName": "configuracaoAgenda",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200106110012",
+    "entityTableName": "data_falta",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

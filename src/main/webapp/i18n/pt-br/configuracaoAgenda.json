@@ -1,0 +1,29 @@
+{
+  "cinematicaApp": {
+    "configuracaoAgenda": {
+      "home": {
+        "title": "Configuracao Agenda",
+        "createLabel": "Criar novo Configuracao Agenda",
+        "createOrEditLabel": "Criar ou editar Configuracao Agenda",
+        "search": "Pesquisar por Configuracao Agenda",
+        "notFound": "Nenhum Configuracao Agenda encontrado"
+      },
+      "created": "Um novo Configuracao Agenda foi criado com o identificador {{ param }}",
+      "updated": "Um Configuracao Agenda foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Configuracao Agenda foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Configuracao Agenda {{ id }}?"
+      },
+      "detail": {
+        "title": "Configuracao Agenda"
+      },
+      "segunda": "Segunda",
+      "terca": "Terca",
+      "quarta": "Quarta",
+      "quinta": "Quinta",
+      "sexta": "Sexta",
+      "sabado": "Sabado",
+      "domingo": "Domingo"
+    }
+  }
+}

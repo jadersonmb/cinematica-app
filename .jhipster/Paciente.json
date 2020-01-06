@@ -1,0 +1,114 @@
+{
+    "name": "Paciente",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomeCompleto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "criadoEm",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "atualizadoEm",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "cpf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rg",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefoneCelular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fotoUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "funcionario",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dataNascimento",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "crefito",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fotoUrlEndereco",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "indicacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ativo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sexo",
+            "fieldValues": "Masculino,Feminino"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empresa",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "endereco",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "medico",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "medico",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "profissao",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "profissao",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200106110008",
+    "entityTableName": "paciente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

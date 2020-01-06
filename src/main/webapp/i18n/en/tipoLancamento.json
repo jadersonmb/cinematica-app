@@ -1,0 +1,9 @@
+{
+  "cinematicaApp": {
+    "TipoLancamento": {
+      "null": "",
+      "Receita": "Receita",
+      "Despesa": "Despesa"
+    }
+  }
+}

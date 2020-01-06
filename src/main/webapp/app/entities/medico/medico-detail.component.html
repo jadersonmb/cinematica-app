@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="medico">
+            <h2><span jhiTranslate="cinematicaApp.medico.detail.title">Medico</span> {{medico.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cinematicaApp.medico.nome">Nome</span></dt>
+                <dd>
+                    <span>{{medico.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.medico.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{medico.telefone}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.medico.email">Email</span></dt>
+                <dd>
+                    <span>{{medico.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.medico.especialidade">Especialidade</span></dt>
+                <dd>
+                    <div *ngIf="medico.especialidade">
+                        <a [routerLink]="['/especialidade', medico.especialidade?.id, 'view']">{{medico.especialidade?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/medico', medico.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

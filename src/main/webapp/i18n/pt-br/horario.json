@@ -1,0 +1,24 @@
+{
+  "cinematicaApp": {
+    "horario": {
+      "home": {
+        "title": "Horarios",
+        "createLabel": "Criar novo Horario",
+        "createOrEditLabel": "Criar ou editar Horario",
+        "search": "Pesquisar por Horario",
+        "notFound": "Nenhum Horario encontrado"
+      },
+      "created": "Um novo Horario foi criado com o identificador {{ param }}",
+      "updated": "Um Horario foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Horario foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Horario {{ id }}?"
+      },
+      "detail": {
+        "title": "Horario"
+      },
+      "horarioInicio": "Horario Inicio",
+      "horarioFim": "Horario Fim"
+    }
+  }
+}

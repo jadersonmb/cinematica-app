@@ -14,6 +14,26 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110002_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110003_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110004_added_entity_Profissao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110005_added_entity_FormaPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110006_added_entity_Especialidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110007_added_entity_Medico.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110008_added_entity_Paciente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110009_added_entity_FluxoCaixa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110010_added_entity_Horario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110011_added_entity_HorarioDisponivel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110012_added_entity_DataFalta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110013_added_entity_ConfiguracaoAgenda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110014_added_entity_Agenda.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200106110003_added_entity_constraints_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110007_added_entity_constraints_Medico.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110008_added_entity_constraints_Paciente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110009_added_entity_constraints_FluxoCaixa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110011_added_entity_constraints_HorarioDisponivel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110012_added_entity_constraints_DataFalta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200106110014_added_entity_constraints_Agenda.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

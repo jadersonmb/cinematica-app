@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="horarioDisponivel">
+            <h2><span jhiTranslate="cinematicaApp.horarioDisponivel.detail.title">Horario Disponivel</span> {{horarioDisponivel.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cinematicaApp.horarioDisponivel.horario">Horario</span></dt>
+                <dd>
+                    <div *ngIf="horarioDisponivel.horario">
+                        <a [routerLink]="['/horario', horarioDisponivel.horario?.id, 'view']">{{horarioDisponivel.horario?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.horarioDisponivel.dataFalta">Data Falta</span></dt>
+                <dd>
+                    <div *ngIf="horarioDisponivel.dataFalta">
+                        <a [routerLink]="['/data-falta', horarioDisponivel.dataFalta?.id, 'view']">{{horarioDisponivel.dataFalta?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/horario-disponivel', horarioDisponivel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

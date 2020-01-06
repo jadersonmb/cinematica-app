@@ -1,0 +1,30 @@
+{
+    "name": "HorarioDisponivel",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "horario",
+            "otherEntityRelationshipName": "horarioDisponivel",
+            "relationshipName": "horario",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dataFalta",
+            "otherEntityRelationshipName": "horarioDisponivel",
+            "relationshipName": "dataFalta",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200106110011",
+    "entityTableName": "horario_disponivel",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

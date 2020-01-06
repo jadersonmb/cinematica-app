@@ -1,0 +1,32 @@
+{
+  "cinematicaApp": {
+    "empresa": {
+      "home": {
+        "title": "Empresas",
+        "createLabel": "Create a new Empresa",
+        "createOrEditLabel": "Create or edit a Empresa",
+        "search": "Search for Empresa",
+        "notFound": "No Empresas found"
+      },
+      "created": "A new Empresa is created with identifier {{ param }}",
+      "updated": "A Empresa is updated with identifier {{ param }}",
+      "deleted": "A Empresa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Empresa {{ id }}?"
+      },
+      "detail": {
+        "title": "Empresa"
+      },
+      "nomeFantasia": "Nome Fantasia",
+      "razaoSocial": "Razao Social",
+      "cnpj": "Cnpj",
+      "telefone": "Telefone",
+      "email": "Email",
+      "inscricaoEstadual": "Inscricao Estadual",
+      "inscricaoMunicipal": "Inscricao Municipal",
+      "website": "Website",
+      "dataContratacao": "Data Contratacao",
+      "endereco": "Endereco"
+    }
+  }
+}

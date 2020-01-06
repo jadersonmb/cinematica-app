@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-agenda-heading" jhiTranslate="cinematicaApp.agenda.home.createOrEditLabel">Create or edit a Agenda</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.dataInicio" for="field_dataInicio">Data Inicio</label>
+                    <div class="d-flex">
+                        <input id="field_dataInicio" type="datetime-local" class="form-control" name="dataInicio" formControlName="dataInicio" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.dataFim" for="field_dataFim">Data Fim</label>
+                    <div class="d-flex">
+                        <input id="field_dataFim" type="datetime-local" class="form-control" name="dataFim" formControlName="dataFim" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.diaTodo" for="field_diaTodo">Dia Todo</label>
+                    <input type="checkbox" class="form-control" name="diaTodo" id="field_diaTodo"
+                           formControlName="diaTodo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.falta" for="field_falta">Falta</label>
+                    <input type="checkbox" class="form-control" name="falta" id="field_falta"
+                           formControlName="falta"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.cancelou" for="field_cancelou">Cancelou</label>
+                    <input type="checkbox" class="form-control" name="cancelou" id="field_cancelou"
+                           formControlName="cancelou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.horario" for="field_horario">Horario</label>
+                    <select class="form-control" id="field_horario" name="horario" formControlName="horario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="horarioOption.id === editForm.get('horario')!.value?.id ? editForm.get('horario')!.value : horarioOption" *ngFor="let horarioOption of horarios; trackBy: trackById">{{horarioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" formControlName="empresa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{empresaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.paciente" for="field_paciente">Paciente</label>
+                    <select class="form-control" id="field_paciente" name="paciente" formControlName="paciente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pacienteOption.id === editForm.get('paciente')!.value?.id ? editForm.get('paciente')!.value : pacienteOption" *ngFor="let pacienteOption of pacientes; trackBy: trackById">{{pacienteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.funcionario" for="field_funcionario">Funcionario</label>
+                    <select class="form-control" id="field_funcionario" name="funcionario" formControlName="funcionario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pacienteOption.id === editForm.get('funcionario')!.value?.id ? editForm.get('funcionario')!.value : pacienteOption" *ngFor="let pacienteOption of pacientes; trackBy: trackById">{{pacienteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.agenda.especialidade" for="field_especialidade">Especialidade</label>
+                    <select class="form-control" id="field_especialidade" name="especialidade" formControlName="especialidade">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="especialidadeOption.id === editForm.get('especialidade')!.value?.id ? editForm.get('especialidade')!.value : especialidadeOption" *ngFor="let especialidadeOption of especialidades; trackBy: trackById">{{especialidadeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{
+  "cinematicaApp": {
+    "paciente": {
+      "home": {
+        "title": "Pacientes",
+        "createLabel": "Criar novo Paciente",
+        "createOrEditLabel": "Criar ou editar Paciente",
+        "search": "Pesquisar por Paciente",
+        "notFound": "Nenhum Paciente encontrado"
+      },
+      "created": "Um novo Paciente foi criado com o identificador {{ param }}",
+      "updated": "Um Paciente foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Paciente foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Paciente {{ id }}?"
+      },
+      "detail": {
+        "title": "Paciente"
+      },
+      "nome": "Nome",
+      "nomeCompleto": "Nome Completo",
+      "criadoEm": "Criado Em",
+      "atualizadoEm": "Atualizado Em",
+      "cpf": "Cpf",
+      "rg": "Rg",
+      "email": "Email",
+      "telefoneCelular": "Telefone Celular",
+      "fotoUrl": "Foto Url",
+      "funcionario": "Funcionario",
+      "dataNascimento": "Data Nascimento",
+      "crefito": "Crefito",
+      "telefone": "Telefone",
+      "fotoUrlEndereco": "Foto Url Endereco",
+      "indicacao": "Indicacao",
+      "ativo": "Ativo",
+      "sexo": "Sexo",
+      "empresa": "Empresa",
+      "endereco": "Endereco",
+      "medico": "Medico",
+      "profissao": "Profissao"
+    }
+  }
+}

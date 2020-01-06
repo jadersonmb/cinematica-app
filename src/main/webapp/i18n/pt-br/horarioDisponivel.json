@@ -1,0 +1,24 @@
+{
+  "cinematicaApp": {
+    "horarioDisponivel": {
+      "home": {
+        "title": "Horario Disponivels",
+        "createLabel": "Criar novo Horario Disponivel",
+        "createOrEditLabel": "Criar ou editar Horario Disponivel",
+        "search": "Pesquisar por Horario Disponivel",
+        "notFound": "Nenhum Horario Disponivel encontrado"
+      },
+      "created": "Um novo Horario Disponivel foi criado com o identificador {{ param }}",
+      "updated": "Um Horario Disponivel foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Horario Disponivel foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Horario Disponivel {{ id }}?"
+      },
+      "detail": {
+        "title": "Horario Disponivel"
+      },
+      "horario": "Horario",
+      "dataFalta": "Data Falta"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paciente">
+            <h2><span jhiTranslate="cinematicaApp.paciente.detail.title">Paciente</span> {{paciente.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cinematicaApp.paciente.nome">Nome</span></dt>
+                <dd>
+                    <span>{{paciente.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.nomeCompleto">Nome Completo</span></dt>
+                <dd>
+                    <span>{{paciente.nomeCompleto}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.criadoEm">Criado Em</span></dt>
+                <dd>
+                    <span>{{paciente.criadoEm}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.atualizadoEm">Atualizado Em</span></dt>
+                <dd>
+                    <span>{{paciente.atualizadoEm}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.cpf">Cpf</span></dt>
+                <dd>
+                    <span>{{paciente.cpf}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.rg">Rg</span></dt>
+                <dd>
+                    <span>{{paciente.rg}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.email">Email</span></dt>
+                <dd>
+                    <span>{{paciente.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.telefoneCelular">Telefone Celular</span></dt>
+                <dd>
+                    <span>{{paciente.telefoneCelular}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.fotoUrl">Foto Url</span></dt>
+                <dd>
+                    <span>{{paciente.fotoUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.funcionario">Funcionario</span></dt>
+                <dd>
+                    <span>{{paciente.funcionario}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.dataNascimento">Data Nascimento</span></dt>
+                <dd>
+                    <span>{{paciente.dataNascimento}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.crefito">Crefito</span></dt>
+                <dd>
+                    <span>{{paciente.crefito}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{paciente.telefone}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.fotoUrlEndereco">Foto Url Endereco</span></dt>
+                <dd>
+                    <span>{{paciente.fotoUrlEndereco}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.indicacao">Indicacao</span></dt>
+                <dd>
+                    <span>{{paciente.indicacao}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.ativo">Ativo</span></dt>
+                <dd>
+                    <span>{{paciente.ativo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.sexo">Sexo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'cinematicaApp.Sexo.' + paciente.sexo}}">{{paciente.sexo}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.empresa">Empresa</span></dt>
+                <dd>
+                    <div *ngIf="paciente.empresa">
+                        <a [routerLink]="['/empresa', paciente.empresa?.id, 'view']">{{paciente.empresa?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="paciente.endereco">
+                        <a [routerLink]="['/endereco', paciente.endereco?.id, 'view']">{{paciente.endereco?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.medico">Medico</span></dt>
+                <dd>
+                    <div *ngIf="paciente.medico">
+                        <a [routerLink]="['/medico', paciente.medico?.id, 'view']">{{paciente.medico?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.paciente.profissao">Profissao</span></dt>
+                <dd>
+                    <div *ngIf="paciente.profissao">
+                        <a [routerLink]="['/profissao', paciente.profissao?.id, 'view']">{{paciente.profissao?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/paciente', paciente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

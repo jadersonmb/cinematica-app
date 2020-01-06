@@ -1,0 +1,162 @@
+entity Endereco {
+	id Long
+ 	cep String
+	nomeEndereco String
+	bairro String
+	cidade String
+	estado String
+	numero Integer
+	complemento String
+}
+
+entity Empresa {
+	id Long
+	nomeFantasia String
+	razaoSocial String
+	cnpj String
+	telefone String
+	email String
+	inscricaoEstadual String
+	inscricaoMunicipal String
+	website String
+	dataContratacao Instant    
+}
+
+entity Profissao {
+	id Long
+	descricao String
+}
+
+entity FormaPagamento {
+	id Long
+	descricao String
+}
+
+entity Especialidade {
+	id Long
+	descricao String
+}
+
+entity Medico {
+	id Long
+	nome String
+	telefone String 
+	email String
+}
+
+entity Paciente {
+	id Long
+	nome String
+	nomeCompleto String
+	criadoEm Instant
+    atualizadoEm Instant
+	cpf String
+	rg String
+	email String
+	telefoneCelular String
+	fotoUrl String
+	funcionario Boolean
+	dataNascimento Instant
+	crefito String 
+	telefone String
+	fotoUrlEndereco String
+	indicacao String
+    ativo Boolean
+    sexo Sexo
+}
+
+entity FluxoCaixa {
+	id Long
+	dataLancamento Instant
+	descricao String
+	valor Double
+	tipoLancamento TipoLancamento
+	numeroRecibo String
+	quantidadeParcela Integer
+}
+
+entity Horario {
+	id Long
+	horarioInicio String
+	horarioFim String
+}
+
+entity HorarioDisponivel {
+	id Long
+}
+
+entity DataFalta {
+	id Long
+	dataFalta Instant    	
+}
+
+entity ConfiguracaoAgenda {
+	id Long
+	segunda Boolean
+	terca Boolean
+	quarta Boolean
+	quinta Boolean
+	sexta Boolean
+	sabado Boolean
+	domingo Boolean
+}
+
+entity Agenda {
+	id Long
+	dataInicio Instant
+	dataFim Instant
+	diaTodo Boolean
+	falta Boolean
+	cancelou Boolean
+}
+
+enum Sexo {
+    Masculino, Feminino
+}
+
+enum TipoLancamento {
+    Receita, Despesa
+}
+
+relationship ManyToOne {
+	Empresa{endereco} to Endereco
+}
+
+relationship ManyToOne {
+	Medico{especialidade} to Especialidade
+}
+
+relationship ManyToOne {
+	Agenda{horario} to Horario
+    Agenda{empresa} to Empresa
+    Agenda{paciente} to Paciente
+    Agenda{funcionario} to Paciente
+    Agenda{especialidade} to Especialidade
+}
+
+relationship ManyToOne {
+	DataFalta{empresa} to Empresa
+    DataFalta{configuracaoAgenda} to ConfiguracaoAgenda
+}
+
+relationship ManyToOne {
+	HorarioDisponivel{horario} to Horario
+}
+
+relationship OneToMany {
+    DataFalta{horarioDisponivel} to HorarioDisponivel{dataFalta}
+} 
+
+relationship ManyToOne {
+	Paciente{empresa} to Empresa
+    Paciente{endereco} to Endereco
+    Paciente{medico} to Medico
+    Paciente{profissao} to Profissao
+}
+
+relationship ManyToOne {
+	FluxoCaixa{especialidade} to Especialidade
+    FluxoCaixa{empresa} to Empresa
+    FluxoCaixa{paciente} to Paciente
+    FluxoCaixa{formaPagamento} to FormaPagamento
+}

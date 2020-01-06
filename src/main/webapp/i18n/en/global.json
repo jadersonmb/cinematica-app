@@ -7,6 +7,19 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "endereco": "Endereco",
+        "empresa": "Empresa",
+        "profissao": "Profissao",
+        "formaPagamento": "Forma Pagamento",
+        "especialidade": "Especialidade",
+        "medico": "Medico",
+        "paciente": "Paciente",
+        "fluxoCaixa": "Fluxo Caixa",
+        "horario": "Horario",
+        "horarioDisponivel": "Horario Disponivel",
+        "dataFalta": "Data Falta",
+        "configuracaoAgenda": "Configuracao Agenda",
+        "agenda": "Agenda",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

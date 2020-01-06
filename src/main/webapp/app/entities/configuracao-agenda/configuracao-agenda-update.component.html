@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-configuracao-agenda-heading" jhiTranslate="cinematicaApp.configuracaoAgenda.home.createOrEditLabel">Create or edit a Configuracao Agenda</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.segunda" for="field_segunda">Segunda</label>
+                    <input type="checkbox" class="form-control" name="segunda" id="field_segunda"
+                           formControlName="segunda"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.terca" for="field_terca">Terca</label>
+                    <input type="checkbox" class="form-control" name="terca" id="field_terca"
+                           formControlName="terca"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.quarta" for="field_quarta">Quarta</label>
+                    <input type="checkbox" class="form-control" name="quarta" id="field_quarta"
+                           formControlName="quarta"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.quinta" for="field_quinta">Quinta</label>
+                    <input type="checkbox" class="form-control" name="quinta" id="field_quinta"
+                           formControlName="quinta"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.sexta" for="field_sexta">Sexta</label>
+                    <input type="checkbox" class="form-control" name="sexta" id="field_sexta"
+                           formControlName="sexta"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.sabado" for="field_sabado">Sabado</label>
+                    <input type="checkbox" class="form-control" name="sabado" id="field_sabado"
+                           formControlName="sabado"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.configuracaoAgenda.domingo" for="field_domingo">Domingo</label>
+                    <input type="checkbox" class="form-control" name="domingo" id="field_domingo"
+                           formControlName="domingo"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

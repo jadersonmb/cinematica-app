@@ -1,0 +1,44 @@
+{
+    "name": "ConfiguracaoAgenda",
+    "fields": [
+        {
+            "fieldName": "segunda",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "terca",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "quarta",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "quinta",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sexta",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sabado",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "domingo",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200106110013",
+    "entityTableName": "configuracao_agenda",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

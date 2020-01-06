@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-horario-disponivel-heading" jhiTranslate="cinematicaApp.horarioDisponivel.home.createOrEditLabel">Create or edit a Horario Disponivel</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.horarioDisponivel.horario" for="field_horario">Horario</label>
+                    <select class="form-control" id="field_horario" name="horario" formControlName="horario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="horarioOption.id === editForm.get('horario')!.value?.id ? editForm.get('horario')!.value : horarioOption" *ngFor="let horarioOption of horarios; trackBy: trackById">{{horarioOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.horarioDisponivel.dataFalta" for="field_dataFalta">Data Falta</label>
+                    <select class="form-control" id="field_dataFalta" name="dataFalta" formControlName="dataFalta">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dataFaltaOption.id === editForm.get('dataFalta')!.value?.id ? editForm.get('dataFalta')!.value : dataFaltaOption" *ngFor="let dataFaltaOption of datafaltas; trackBy: trackById">{{dataFaltaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

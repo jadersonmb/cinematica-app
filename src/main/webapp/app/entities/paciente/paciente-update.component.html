@@ -1,0 +1,142 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-paciente-heading" jhiTranslate="cinematicaApp.paciente.home.createOrEditLabel">Create or edit a Paciente</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.nomeCompleto" for="field_nomeCompleto">Nome Completo</label>
+                    <input type="text" class="form-control" name="nomeCompleto" id="field_nomeCompleto"
+                           formControlName="nomeCompleto"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.criadoEm" for="field_criadoEm">Criado Em</label>
+                    <div class="d-flex">
+                        <input id="field_criadoEm" type="datetime-local" class="form-control" name="criadoEm" formControlName="criadoEm" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.atualizadoEm" for="field_atualizadoEm">Atualizado Em</label>
+                    <div class="d-flex">
+                        <input id="field_atualizadoEm" type="datetime-local" class="form-control" name="atualizadoEm" formControlName="atualizadoEm" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.cpf" for="field_cpf">Cpf</label>
+                    <input type="text" class="form-control" name="cpf" id="field_cpf"
+                           formControlName="cpf"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.rg" for="field_rg">Rg</label>
+                    <input type="text" class="form-control" name="rg" id="field_rg"
+                           formControlName="rg"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.telefoneCelular" for="field_telefoneCelular">Telefone Celular</label>
+                    <input type="text" class="form-control" name="telefoneCelular" id="field_telefoneCelular"
+                           formControlName="telefoneCelular"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.fotoUrl" for="field_fotoUrl">Foto Url</label>
+                    <input type="text" class="form-control" name="fotoUrl" id="field_fotoUrl"
+                           formControlName="fotoUrl"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.funcionario" for="field_funcionario">Funcionario</label>
+                    <input type="checkbox" class="form-control" name="funcionario" id="field_funcionario"
+                           formControlName="funcionario"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.dataNascimento" for="field_dataNascimento">Data Nascimento</label>
+                    <div class="d-flex">
+                        <input id="field_dataNascimento" type="datetime-local" class="form-control" name="dataNascimento" formControlName="dataNascimento" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.crefito" for="field_crefito">Crefito</label>
+                    <input type="text" class="form-control" name="crefito" id="field_crefito"
+                           formControlName="crefito"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.telefone" for="field_telefone">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" id="field_telefone"
+                           formControlName="telefone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.fotoUrlEndereco" for="field_fotoUrlEndereco">Foto Url Endereco</label>
+                    <input type="text" class="form-control" name="fotoUrlEndereco" id="field_fotoUrlEndereco"
+                           formControlName="fotoUrlEndereco"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.indicacao" for="field_indicacao">Indicacao</label>
+                    <input type="text" class="form-control" name="indicacao" id="field_indicacao"
+                           formControlName="indicacao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.ativo" for="field_ativo">Ativo</label>
+                    <input type="checkbox" class="form-control" name="ativo" id="field_ativo"
+                           formControlName="ativo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.sexo" for="field_sexo">Sexo</label>
+                    <select class="form-control" name="sexo" formControlName="sexo" id="field_sexo">
+                        <option value="Masculino">{{'cinematicaApp.Sexo.Masculino' | translate}}</option>
+                        <option value="Feminino">{{'cinematicaApp.Sexo.Feminino' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" formControlName="empresa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackById">{{empresaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.endereco" for="field_endereco">Endereco</label>
+                    <select class="form-control" id="field_endereco" name="endereco" formControlName="endereco">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="enderecoOption.id === editForm.get('endereco')!.value?.id ? editForm.get('endereco')!.value : enderecoOption" *ngFor="let enderecoOption of enderecos; trackBy: trackById">{{enderecoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.medico" for="field_medico">Medico</label>
+                    <select class="form-control" id="field_medico" name="medico" formControlName="medico">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="medicoOption.id === editForm.get('medico')!.value?.id ? editForm.get('medico')!.value : medicoOption" *ngFor="let medicoOption of medicos; trackBy: trackById">{{medicoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="cinematicaApp.paciente.profissao" for="field_profissao">Profissao</label>
+                    <select class="form-control" id="field_profissao" name="profissao" formControlName="profissao">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="profissaoOption.id === editForm.get('profissao')!.value?.id ? editForm.get('profissao')!.value : profissaoOption" *ngFor="let profissaoOption of profissaos; trackBy: trackById">{{profissaoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

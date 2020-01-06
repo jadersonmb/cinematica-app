@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Agenda.
+    -->
+    <changeSet id="20200106110014-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="horario_id"
+                                 baseTableName="agenda"
+                                 constraintName="fk_agenda_horario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="horario"/>
+
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="agenda"
+                                 constraintName="fk_agenda_empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="paciente_id"
+                                 baseTableName="agenda"
+                                 constraintName="fk_agenda_paciente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paciente"/>
+
+        <addForeignKeyConstraint baseColumnNames="funcionario_id"
+                                 baseTableName="agenda"
+                                 constraintName="fk_agenda_funcionario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paciente"/>
+
+        <addForeignKeyConstraint baseColumnNames="especialidade_id"
+                                 baseTableName="agenda"
+                                 constraintName="fk_agenda_especialidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="especialidade"/>
+
+    </changeSet>
+</databaseChangeLog>

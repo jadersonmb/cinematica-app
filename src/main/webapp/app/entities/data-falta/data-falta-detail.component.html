@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dataFalta">
+            <h2><span jhiTranslate="cinematicaApp.dataFalta.detail.title">Data Falta</span> {{dataFalta.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="cinematicaApp.dataFalta.dataFalta">Data Falta</span></dt>
+                <dd>
+                    <span>{{dataFalta.dataFalta}}</span>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.dataFalta.empresa">Empresa</span></dt>
+                <dd>
+                    <div *ngIf="dataFalta.empresa">
+                        <a [routerLink]="['/empresa', dataFalta.empresa?.id, 'view']">{{dataFalta.empresa?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="cinematicaApp.dataFalta.configuracaoAgenda">Configuracao Agenda</span></dt>
+                <dd>
+                    <div *ngIf="dataFalta.configuracaoAgenda">
+                        <a [routerLink]="['/configuracao-agenda', dataFalta.configuracaoAgenda?.id, 'view']">{{dataFalta.configuracaoAgenda?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/data-falta', dataFalta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
